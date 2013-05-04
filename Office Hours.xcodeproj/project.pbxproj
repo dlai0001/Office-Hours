@@ -18,6 +18,18 @@
 		2F858EA9173596D7004D1028 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F858EA8173596D7004D1028 /* Default-568h@2x.png */; };
 		2F858EAC173596D7004D1028 /* Office_Hours_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F858EAA173596D7004D1028 /* Office_Hours_iPhone.storyboard */; };
 		2F858EBA1735A217004D1028 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F858EB91735A217004D1028 /* LoginViewController.m */; };
+		2F858ED01735A3D2004D1028 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F858EBE1735A3D2004D1028 /* AFHTTPClient.m */; };
+		2F858ED11735A3D2004D1028 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F858EC01735A3D2004D1028 /* AFHTTPRequestOperation.m */; };
+		2F858ED21735A3D2004D1028 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F858EC21735A3D2004D1028 /* AFImageRequestOperation.m */; };
+		2F858ED31735A3D2004D1028 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F858EC41735A3D2004D1028 /* AFJSONRequestOperation.m */; };
+		2F858ED41735A3D2004D1028 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F858EC61735A3D2004D1028 /* AFNetworkActivityIndicatorManager.m */; };
+		2F858ED51735A3D2004D1028 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F858EC91735A3D2004D1028 /* AFPropertyListRequestOperation.m */; };
+		2F858ED61735A3D2004D1028 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F858ECB1735A3D2004D1028 /* AFURLConnectionOperation.m */; };
+		2F858ED71735A3D2004D1028 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F858ECD1735A3D2004D1028 /* AFXMLRequestOperation.m */; };
+		2F858ED81735A3D2004D1028 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F858ECF1735A3D2004D1028 /* UIImageView+AFNetworking.m */; };
+		2F858EDA1735A3E6004D1028 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F858ED91735A3E6004D1028 /* MobileCoreServices.framework */; };
+		2F858EDC1735A3EC004D1028 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F858EDB1735A3EC004D1028 /* SystemConfiguration.framework */; };
+		2F858EDF1735A56B004D1028 /* Office_Hours_Data_Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F858EDD1735A56B004D1028 /* Office_Hours_Data_Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +49,28 @@
 		2F858EAB173596D7004D1028 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Office_Hours_iPhone.storyboard; sourceTree = "<group>"; };
 		2F858EB81735A217004D1028 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/LoginViewController.h; sourceTree = "<group>"; };
 		2F858EB91735A217004D1028 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controllers/LoginViewController.m; sourceTree = "<group>"; };
+		2F858EBD1735A3D2004D1028 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		2F858EBE1735A3D2004D1028 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
+		2F858EBF1735A3D2004D1028 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		2F858EC01735A3D2004D1028 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		2F858EC11735A3D2004D1028 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		2F858EC21735A3D2004D1028 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
+		2F858EC31735A3D2004D1028 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		2F858EC41735A3D2004D1028 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		2F858EC51735A3D2004D1028 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		2F858EC61735A3D2004D1028 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		2F858EC71735A3D2004D1028 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		2F858EC81735A3D2004D1028 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		2F858EC91735A3D2004D1028 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		2F858ECA1735A3D2004D1028 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		2F858ECB1735A3D2004D1028 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		2F858ECC1735A3D2004D1028 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		2F858ECD1735A3D2004D1028 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
+		2F858ECE1735A3D2004D1028 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		2F858ECF1735A3D2004D1028 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		2F858ED91735A3E6004D1028 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		2F858EDB1735A3EC004D1028 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2F858EDE1735A56B004D1028 /* Office_Hours_Data_Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Office_Hours_Data_Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F858EDC1735A3EC004D1028 /* SystemConfiguration.framework in Frameworks */,
+				2F858EDA1735A3E6004D1028 /* MobileCoreServices.framework in Frameworks */,
 				2F858E93173596D6004D1028 /* UIKit.framework in Frameworks */,
 				2F858E95173596D6004D1028 /* Foundation.framework in Frameworks */,
 				2F858E97173596D6004D1028 /* CoreGraphics.framework in Frameworks */,
@@ -58,6 +94,7 @@
 			children = (
 				2F858E98173596D6004D1028 /* Office Hours */,
 				2F858E91173596D6004D1028 /* Frameworks */,
+				2F858EBB1735A3A2004D1028 /* Third Party Frameworks */,
 				2F858E90173596D6004D1028 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,6 +110,8 @@
 		2F858E91173596D6004D1028 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F858EDB1735A3EC004D1028 /* SystemConfiguration.framework */,
+				2F858ED91735A3E6004D1028 /* MobileCoreServices.framework */,
 				2F858E92173596D6004D1028 /* UIKit.framework */,
 				2F858E94173596D6004D1028 /* Foundation.framework */,
 				2F858E96173596D6004D1028 /* CoreGraphics.framework */,
@@ -127,8 +166,44 @@
 		2F858EB7173596F3004D1028 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2F858EDD1735A56B004D1028 /* Office_Hours_Data_Model.xcdatamodeld */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		2F858EBB1735A3A2004D1028 /* Third Party Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F858EBC1735A3D2004D1028 /* AFNetworking */,
+			);
+			name = "Third Party Frameworks";
+			sourceTree = "<group>";
+		};
+		2F858EBC1735A3D2004D1028 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				2F858EBD1735A3D2004D1028 /* AFHTTPClient.h */,
+				2F858EBE1735A3D2004D1028 /* AFHTTPClient.m */,
+				2F858EBF1735A3D2004D1028 /* AFHTTPRequestOperation.h */,
+				2F858EC01735A3D2004D1028 /* AFHTTPRequestOperation.m */,
+				2F858EC11735A3D2004D1028 /* AFImageRequestOperation.h */,
+				2F858EC21735A3D2004D1028 /* AFImageRequestOperation.m */,
+				2F858EC31735A3D2004D1028 /* AFJSONRequestOperation.h */,
+				2F858EC41735A3D2004D1028 /* AFJSONRequestOperation.m */,
+				2F858EC51735A3D2004D1028 /* AFNetworkActivityIndicatorManager.h */,
+				2F858EC61735A3D2004D1028 /* AFNetworkActivityIndicatorManager.m */,
+				2F858EC71735A3D2004D1028 /* AFNetworking.h */,
+				2F858EC81735A3D2004D1028 /* AFPropertyListRequestOperation.h */,
+				2F858EC91735A3D2004D1028 /* AFPropertyListRequestOperation.m */,
+				2F858ECA1735A3D2004D1028 /* AFURLConnectionOperation.h */,
+				2F858ECB1735A3D2004D1028 /* AFURLConnectionOperation.m */,
+				2F858ECC1735A3D2004D1028 /* AFXMLRequestOperation.h */,
+				2F858ECD1735A3D2004D1028 /* AFXMLRequestOperation.m */,
+				2F858ECE1735A3D2004D1028 /* UIImageView+AFNetworking.h */,
+				2F858ECF1735A3D2004D1028 /* UIImageView+AFNetworking.m */,
+			);
+			name = AFNetworking;
+			path = "Office Hours/Third Party Frameworks/AFNetworking";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +274,16 @@
 				2F858E9F173596D6004D1028 /* main.m in Sources */,
 				2F858EA3173596D6004D1028 /* AppDelegate.m in Sources */,
 				2F858EBA1735A217004D1028 /* LoginViewController.m in Sources */,
+				2F858ED01735A3D2004D1028 /* AFHTTPClient.m in Sources */,
+				2F858ED11735A3D2004D1028 /* AFHTTPRequestOperation.m in Sources */,
+				2F858ED21735A3D2004D1028 /* AFImageRequestOperation.m in Sources */,
+				2F858ED31735A3D2004D1028 /* AFJSONRequestOperation.m in Sources */,
+				2F858ED41735A3D2004D1028 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				2F858ED51735A3D2004D1028 /* AFPropertyListRequestOperation.m in Sources */,
+				2F858ED61735A3D2004D1028 /* AFURLConnectionOperation.m in Sources */,
+				2F858ED71735A3D2004D1028 /* AFXMLRequestOperation.m in Sources */,
+				2F858ED81735A3D2004D1028 /* UIImageView+AFNetworking.m in Sources */,
+				2F858EDF1735A56B004D1028 /* Office_Hours_Data_Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +408,20 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2F858EDD1735A56B004D1028 /* Office_Hours_Data_Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2F858EDE1735A56B004D1028 /* Office_Hours_Data_Model.xcdatamodel */,
+			);
+			currentVersion = 2F858EDE1735A56B004D1028 /* Office_Hours_Data_Model.xcdatamodel */;
+			name = Office_Hours_Data_Model.xcdatamodeld;
+			path = Models/Office_Hours_Data_Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2F858E87173596D6004D1028 /* Project object */;
 }

@@ -12,13 +12,19 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Im-cX-kvX">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Im-cX-kvX">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="zLN-bd-yP9"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LqY-f9-Jz3">
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LqY-f9-Jz3">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="meJ-Qz-k9i"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4e-8a-RfF">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -76,6 +82,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="LqY-f9-Jz3" id="Hgu-6d-HRk"/>
                         <outlet property="usernameTextField" destination="7Im-cX-kvX" id="hRV-a0-AhJ"/>
+                        <segue destination="Cpc-3V-S1Y" kind="push" id="950-5b-4cT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -88,7 +95,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JTN-vl-2AR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Cpc-3V-S1Y" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lcK-LQ-6G3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="You are {2nd} in line" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erL-Mh-3EU">
@@ -169,7 +176,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Xc-0u-OgG">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Xc-0u-OgG">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -185,20 +192,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X5v-4X-YFe">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BhI-QX-VC2" firstAttribute="leading" secondItem="Ujr-rd-USH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7Gg-Tg-U9G"/>
                             <constraint firstItem="1Xc-0u-OgG" firstAttribute="leading" secondItem="Ujr-rd-USH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="A3z-zM-dy3"/>
+                            <constraint firstAttribute="trailing" secondItem="X5v-4X-YFe" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="QfU-Vq-uDY"/>
                             <constraint firstAttribute="trailing" secondItem="7bn-fd-i0q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="TjI-sc-zxK"/>
                             <constraint firstItem="ymA-Hb-7Eo" firstAttribute="top" secondItem="BhI-QX-VC2" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ZbH-21-BE1"/>
                             <constraint firstItem="BhI-QX-VC2" firstAttribute="top" secondItem="7bn-fd-i0q" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ctP-hU-PF0"/>
                             <constraint firstAttribute="trailing" secondItem="1Xc-0u-OgG" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="e2o-ee-nDZ"/>
+                            <constraint firstItem="X5v-4X-YFe" firstAttribute="leading" secondItem="Ujr-rd-USH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fqg-mR-uJm"/>
                             <constraint firstItem="7bn-fd-i0q" firstAttribute="leading" secondItem="Ujr-rd-USH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hMi-iw-Pte"/>
-                            <constraint firstItem="7bn-fd-i0q" firstAttribute="top" secondItem="1Xc-0u-OgG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jO2-eN-Swa"/>
                             <constraint firstItem="1Xc-0u-OgG" firstAttribute="top" secondItem="Ujr-rd-USH" secondAttribute="top" constant="20" symbolic="YES" type="default" id="kA5-rU-Msk"/>
                             <constraint firstItem="ymA-Hb-7Eo" firstAttribute="leading" secondItem="Ujr-rd-USH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="nJH-51-DVJ"/>
                             <constraint firstAttribute="trailing" secondItem="ymA-Hb-7Eo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="p7u-Hg-gH7"/>
+                            <constraint firstItem="7bn-fd-i0q" firstAttribute="top" secondItem="X5v-4X-YFe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="u8Z-SH-QbZ"/>
+                            <constraint firstItem="X5v-4X-YFe" firstAttribute="top" secondItem="1Xc-0u-OgG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uc1-Tn-ZjY"/>
                             <constraint firstAttribute="trailing" secondItem="BhI-QX-VC2" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="z0k-o0-R6L"/>
                         </constraints>
                     </view>
@@ -216,7 +230,7 @@
             <objects>
                 <viewController id="lsI-DF-LzA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZkC-ta-xs2">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PIs-CZ-wrr">
