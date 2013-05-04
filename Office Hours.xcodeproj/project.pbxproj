@@ -16,8 +16,8 @@
 		2F858EA5173596D7004D1028 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F858EA4173596D6004D1028 /* Default.png */; };
 		2F858EA7173596D7004D1028 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F858EA6173596D7004D1028 /* Default@2x.png */; };
 		2F858EA9173596D7004D1028 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F858EA8173596D7004D1028 /* Default-568h@2x.png */; };
-		2F858EAC173596D7004D1028 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F858EAA173596D7004D1028 /* MainStoryboard.storyboard */; };
-		2F858EAF173596D7004D1028 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F858EAE173596D7004D1028 /* ViewController.m */; };
+		2F858EAC173596D7004D1028 /* Office_Hours_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F858EAA173596D7004D1028 /* Office_Hours_iPhone.storyboard */; };
+		2F858EBA1735A217004D1028 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F858EB91735A217004D1028 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +34,9 @@
 		2F858EA4173596D6004D1028 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2F858EA6173596D7004D1028 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2F858EA8173596D7004D1028 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		2F858EAB173596D7004D1028 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		2F858EAD173596D7004D1028 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2F858EAE173596D7004D1028 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2F858EAB173596D7004D1028 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Office_Hours_iPhone.storyboard; sourceTree = "<group>"; };
+		2F858EB81735A217004D1028 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Controllers/LoginViewController.h; sourceTree = "<group>"; };
+		2F858EB91735A217004D1028 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Controllers/LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +83,10 @@
 		2F858E98173596D6004D1028 /* Office Hours */ = {
 			isa = PBXGroup;
 			children = (
-				2F858EA1173596D6004D1028 /* AppDelegate.h */,
-				2F858EA2173596D6004D1028 /* AppDelegate.m */,
-				2F858EAA173596D7004D1028 /* MainStoryboard.storyboard */,
-				2F858EAD173596D7004D1028 /* ViewController.h */,
-				2F858EAE173596D7004D1028 /* ViewController.m */,
+				2F858EB7173596F3004D1028 /* Models */,
+				2F858EB6173596EC004D1028 /* Controllers */,
 				2F858E99173596D6004D1028 /* Supporting Files */,
+				2F858EB5173596E4004D1028 /* Views */,
 			);
 			path = "Office Hours";
 			sourceTree = "<group>";
@@ -96,6 +94,8 @@
 		2F858E99173596D6004D1028 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2F858EA1173596D6004D1028 /* AppDelegate.h */,
+				2F858EA2173596D6004D1028 /* AppDelegate.m */,
 				2F858E9A173596D6004D1028 /* Office Hours-Info.plist */,
 				2F858E9B173596D6004D1028 /* InfoPlist.strings */,
 				2F858E9E173596D6004D1028 /* main.m */,
@@ -105,6 +105,30 @@
 				2F858EA8173596D7004D1028 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2F858EB5173596E4004D1028 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2F858EAA173596D7004D1028 /* Office_Hours_iPhone.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2F858EB6173596EC004D1028 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2F858EB81735A217004D1028 /* LoginViewController.h */,
+				2F858EB91735A217004D1028 /* LoginViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2F858EB7173596F3004D1028 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,7 +185,7 @@
 				2F858EA5173596D7004D1028 /* Default.png in Resources */,
 				2F858EA7173596D7004D1028 /* Default@2x.png in Resources */,
 				2F858EA9173596D7004D1028 /* Default-568h@2x.png in Resources */,
-				2F858EAC173596D7004D1028 /* MainStoryboard.storyboard in Resources */,
+				2F858EAC173596D7004D1028 /* Office_Hours_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +198,7 @@
 			files = (
 				2F858E9F173596D6004D1028 /* main.m in Sources */,
 				2F858EA3173596D6004D1028 /* AppDelegate.m in Sources */,
-				2F858EAF173596D7004D1028 /* ViewController.m in Sources */,
+				2F858EBA1735A217004D1028 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,12 +213,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		2F858EAA173596D7004D1028 /* MainStoryboard.storyboard */ = {
+		2F858EAA173596D7004D1028 /* Office_Hours_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2F858EAB173596D7004D1028 /* en */,
 			);
-			name = MainStoryboard.storyboard;
+			name = Office_Hours_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
