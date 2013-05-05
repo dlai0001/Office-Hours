@@ -36,109 +36,209 @@
 
 - (void)loginStudentWithUsername:(NSString *)username andPassword:(NSString *)password
 {
-    NSDictionary *outgoingParameters = @{@"username": username, @"password": password};
-    NSString *parameterString = [NetworkingAssistant generateParameterURLStringForParameters:outgoingParameters];
+    NSDictionary *outgoingParameters = @{@"action":@"login", @"username": username, @"password": password};
     
-    NSLog(@"parameterString: %@", parameterString);
+    [self getPath:@"auth"
+       parameters:outgoingParameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"responseObject: %@", responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"error: %@", error.localizedDescription);
+          }];
 }
 
 - (void)logoutStudentWithToken:(NSString *)token
 {
-    NSDictionary *outgoingParameters = @{@"token": token};
-    NSString *paramterString = [NetworkingAssistant generateParameterURLStringForParameters:outgoingParameters];
+    NSDictionary *outgoingParameters = @{@"action": @"logout", @"token": token};
     
-    NSLog(@"parameterString: %@", paramterString);
+    [self getPath:@"auth"
+       parameters:outgoingParameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"responseObject: %@", responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"error: %@", error.localizedDescription);
+          }];
 }
 
 - (void)registerStudentWithUsername:(NSString *)username password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName emailAddress:(NSString *)emailAddress forStudentClass:(NSString *)studentClass
 {
-    NSDictionary *outgoingParameters = @{@"username": username, @"password": password, @"firstName": firstName,
+    NSDictionary *outgoingParameters = @{@"action": @"register", @"username": username, @"password": password, @"firstName": firstName,
                                          @"lastName": lastName, @"email": emailAddress, @"studentClass": studentClass};
-    NSString *parameterString = [NetworkingAssistant generateParameterURLStringForParameters:outgoingParameters];
-    
-    NSLog(@"parameterString: %@", parameterString);
+    [self getPath:@"auth"
+       parameters:outgoingParameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"responseObject: %@", responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"@error: %@", error.localizedDescription);
+          }];
 }
 
 #pragma mark - Teacher Login Related Methods
 
 - (void)loginTeacherWithUsername:(NSString *)username andPassword:(NSString *)password
 {
-    NSDictionary *outgoingParameters = @{@"username": username, @"password": password};
-    NSString *parameterString = [NetworkingAssistant generateParameterURLStringForParameters:outgoingParameters];
+    NSDictionary *outgoingParameters = @{@"action": @"login", @"username": username, @"password": password};
     
-    NSLog(@"parameterString: %@", parameterString);
+    [self getPath:@"teacherauth"
+       parameters:outgoingParameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"responseObject: %@", responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"error: %@", error.localizedDescription);
+          }];
 }
 
 - (void)logoutTeacherWithToken:(NSString *)token
 {
-    NSDictionary *outgoingParameters = @{@"token": token};
-    NSString *parameterString = [NetworkingAssistant generateParameterURLStringForParameters:outgoingParameters];
+    NSDictionary *outgoingParameters = @{@"action": @"logout", @"token": token};
     
-    NSLog(@"parameterString: %@", parameterString);
+    [self getPath:@"teacherauth"
+       parameters:outgoingParameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"responseObject: %@", responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"error: %@", error.localizedDescription);
+          }];
 }
 
 - (void)registerTeacherWithUsername:(NSString *)username password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName andEmailAddress:(NSString *)emailAddress
 {
-    NSDictionary *outgoingParameters = @{@"username": username, @"password": password, @"firstName": firstName,
+    NSDictionary *outgoingParameters = @{@"action": @"register", @"username": username, @"password": password, @"firstName": firstName,
                                          @"lastName": lastName, @"email": emailAddress};
-    NSString *parameterString = [NetworkingAssistant generateParameterURLStringForParameters:outgoingParameters];
     
-    NSLog(@"parameterString: %@", parameterString);
+    [self getPath:@"teacherauth"
+       parameters:outgoingParameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"responseObject: %@", responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"error: %@", error.localizedDescription);
+          }];
 }
 
 #pragma mark - Question Methods
 
 - (void)createQuestionForToken:(NSString *)token withText:(NSString *)text
 {
-    NSDictionary *outgoingParameters = @{@"token": token, @"text": text};
-    NSString *parameterString = [NetworkingAssistant generateParameterURLStringForParameters:outgoingParameters];
+    NSDictionary *outgoingParameters = @{@"action": @"new", @"token": token, @"text": text};
     
-    NSLog(@"parameterString: %@", parameterString);
+    [self getPath:@"questions"
+       parameters:outgoingParameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"responseObject: %@", responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"error: %@", error.localizedDescription);
+          }];
 }
 
 - (void)deleteQuestionForToken:(NSString *)token withIdentification:(NSString *)identification
 {
-    NSDictionary *outgoingParameters = @{@"token": token, @"id": identification};
-    NSString *parameterString = [NetworkingAssistant generateParameterURLStringForParameters:outgoingParameters];
+    NSDictionary *outgoingParameters = @{@"action": @"delete", @"token": token, @"id": identification};
     
-    NSLog(@"parameterString: %@", parameterString);
+    [self getPath:@"question"
+       parameters:outgoingParameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"responseObject: %@", responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"error: %@", error.localizedDescription);
+          }];
 }
 
 #pragma mark - Chat Log Methods
 
 - (void)getChatLogForChannel:(NSString *)channel
 {
-    NSDictionary *outgoingParameters = @{@"channel": channel};
-    NSString *parameterString = [NetworkingAssistant generateParameterURLStringForParameters:outgoingParameters];
+    NSDictionary *outgoingParameters = @{@"action": @"getChat", @"channel": channel};
     
-    NSLog(@"parameterString: %@", parameterString);
+    [self getPath:@"chat"
+       parameters:outgoingParameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"responseObject: %@", responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"error: %@", error.localizedDescription);
+          }];
 }
 
 - (void)getChatLogForChannel:(NSString *)channel fromDate:(NSDate *)date
 {
     NSString *timeIntervalString = [NSString stringWithFormat:@"%f", [date timeIntervalSince1970]];
-    NSDictionary *outgoingParameters = @{@"channel": channel, @"from": timeIntervalString};
-    NSString *parameterString = [NetworkingAssistant generateParameterURLStringForParameters:outgoingParameters];
+    NSDictionary *outgoingParameters = @{@"action": @"getChatLog", @"channel": channel, @"from": timeIntervalString};
     
-    NSLog(@"parameterString: %@", parameterString);
+    [self getPath:@"chat"
+       parameters:outgoingParameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"responseObject: %@", responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"error: %@", error.localizedDescription);
+          }];
+}
+
+- (void)sendChatLogOnChannel:(NSString *)channel fromSender:(NSString *)sender withMessage:(NSString *)message
+{
+    NSDictionary *outgoingParameters = @{@"action": @"new", @"channel": channel, @"sender": sender, @"message": message};
+    
+    [self getPath:@"chat"
+       parameters:outgoingParameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"responseObject: %@", responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"error: %@", error.localizedDescription);
+          }];
 }
 
 #pragma mark - Question Status Methods
 
 - (void)getStatusOfQuestionForIdentification:(NSString *)identification withToken:(NSString *)token
 {
-    NSDictionary *outgoingParameters = @{@"id": identification, @"token": token};
-    NSString *parameterString = [NetworkingAssistant generateParameterURLStringForParameters:outgoingParameters];
+    NSDictionary *outgoingParameters = @{@"action": @"status", @"id": identification, @"token": token};
     
-    NSLog(@"parameterString: %@", parameterString);
+    [self getPath:@"questions"
+       parameters:outgoingParameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"responseObject: %@", responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"error: %@", error.localizedDescription);
+          }];
 }
 
 - (void)getQuestionListForToken:(NSString *)token
 {
-    NSDictionary *outgoingParameters = @{@"token": token};
-    NSString *parameterString = [NetworkingAssistant generateParameterURLStringForParameters:outgoingParameters];
+    NSDictionary *outgoingParameters = @{@"action": @"list", @"token": token};
     
-    NSLog(@"parameterString: %@", parameterString);
+    [self getPath:@"questions"
+       parameters:outgoingParameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"responseObject: %@", responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"error: %@", error.localizedDescription);
+          }];
+}
+
+- (void)setQuestionToAnsweredWithIdentification:(NSString *)identification withToken:(NSString *)token
+{
+    NSDictionary *outgoingParameters = @{@"action": @"answer", @"id": identification, @"token": token};
+    
+    [self getPath:@"questions"
+       parameters:outgoingParameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"responseObject: %@", responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"error: %@", error.localizedDescription);
+          }];
+}
+
+#pragma mark - Notification Status Methods
+
+- (void)setNotificationForToken:(NSString *)token ofType:(NSString *)type
+{
+    NSDictionary *outgoingParameters = @{@"action": @"setNotify", @"token": token, @"type": type};
+    
+    [self getPath:@"questions"
+       parameters:outgoingParameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"responseObject: %@", responseObject);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              NSLog(@"error: %@", error.localizedDescription);
+          }];
 }
 
 @end

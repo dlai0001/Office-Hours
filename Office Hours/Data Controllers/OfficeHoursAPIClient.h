@@ -30,9 +30,13 @@
 
 - (void)getChatLogForChannel:(NSString *)channel;
 - (void)getChatLogForChannel:(NSString *)channel fromDate:(NSDate *)date;
+- (void)sendChatLogOnChannel:(NSString *)channel fromSender:(NSString *)sender withMessage:(NSString *)message;
 
 - (void)getStatusOfQuestionForIdentification:(NSString *)identification withToken:(NSString *)token;
 - (void)getQuestionListForToken:(NSString *)token;
+- (void)setQuestionToAnsweredWithIdentification:(NSString *)identification withToken:(NSString *)token;
+
+- (void)setNotificationForToken:(NSString *)token ofType:(NSString *)type;
 
 @end
 

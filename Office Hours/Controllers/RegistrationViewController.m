@@ -19,15 +19,25 @@
 #define H_PHONE_NUMBER_TEXT_FIELD 9
 
 @interface RegistrationViewController () <UITextFieldDelegate>
+@property (strong, nonatomic) NSString *firstName;
+@property (strong, nonatomic) NSString *lastName;
+@property (strong, nonatomic) NSString *username;
+@property (strong, nonatomic) NSString *password;
+@property (strong, nonatomic) NSString *passwordConfirm;
+@property (strong, nonatomic) NSString *emailAddress;
+@property (strong, nonatomic) NSString *emailAddressConfirm;
+@property (strong, nonatomic) NSString *studentClassName;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *studentTeacherSegmentedControl;
+
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *middleNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordConfirmTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailConfirmTextField;
-@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
+@property (weak, nonatomic) IBOutlet UITextField *studentClassNameTextField;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *submitBarButtonItem;
 @end
@@ -58,7 +68,24 @@
 {
     if ([self registrationFieldsAreValid]) {
         NSLog(@"Successful registration");
-    } else {
+        switch (self.studentTeacherSegmentedControl.selectedSegmentIndex) {
+            case 0:
+                [OfficeHoursAPIClient.sharedOfficeAPIClient registerStudentWithUsername:self.username
+                                                                               password:self.password
+                                                                              firstName:self.firstName
+                                                                               lastName:self.lastName
+                                                                           emailAddress:self.emailAddress
+                                                                        forStudentClass:self.studentClassName];
+                break;
+            case 1:
+                [OfficeHoursAPIClient.sharedOfficeAPIClient registerTeacherWithUsername:self.username
+                                                                               password:self.password
+                                                                              firstName:self.firstName
+                                                                               lastName:self.lastName
+                                                                        andEmailAddress:self.emailAddress];
+                break;
+        }
+            } else {
         NSLog(@"Unsuccessful registration");
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
                                                             message:@"Please be sure to fill in all of the appropriate fields"
@@ -78,20 +105,19 @@
 {
     BOOL fieldsAreValid = NO;
     
-    NSString *firstName = self.firstNameTextField.text;
-    NSString *middleName = self.middleNameTextField.text;
-    NSString *lastName = self.lastNameTextField.text;
-    NSString *username = self.usernameTextField.text;
-    NSString *password = self.passwordTextField.text;
-    NSString *passwordConfirm = self.passwordConfirmTextField.text;
-    NSString *email = self.emailTextField.text;
-    NSString *emailConfirm = self.emailConfirmTextField.text;
-    NSString *phoneNumber = self.phoneNumberTextField.text;
+    self.firstName = self.firstNameTextField.text;
+    self.lastName = self.lastNameTextField.text;
+    self.username = self.usernameTextField.text;
+    self.password = self.passwordTextField.text;
+    self.passwordConfirm = self.passwordConfirmTextField.text;
+    self.emailAddress = self.emailTextField.text;
+    self.emailAddressConfirm = self.emailConfirmTextField.text;
+    self.studentClassName = self.studentClassNameTextField.text;
     
     // Be sure to not include middle name as it is optional
-    NSArray *stringArray = @[firstName,lastName,username,password,
-                             passwordConfirm, email, emailConfirm,
-                             phoneNumber];
+    NSArray *stringArray = @[self.firstName,self.lastName,self.username,self.password,
+                             self.passwordConfirm,self.emailAddress,self.emailAddressConfirm,
+                             self.studentClassName];
     
     if ([self arrayContainsEmptyStrings:stringArray]) {
         NSLog(@"array contains empty strings");
@@ -107,8 +133,6 @@
         }
     }
     
-    NSLog(@"middleName: %@", middleName);
-    
     return fieldsAreValid;
 }
 
@@ -116,11 +140,6 @@
 {
     BOOL emailIsValid = NO;
     BOOL passwordIsValid = NO;
-    
-    NSString *email = self.emailTextField.text;
-    NSString *emailConfirmation = self.emailConfirmTextField.text;
-    NSString *password = self.passwordTextField.text;
-    NSString *passwordConfirmation = self.passwordConfirmTextField.text;
     
     // Error messages
     NSString *emailErrorMessage = @"Email and confirmation do not match";
@@ -133,8 +152,8 @@
                                               cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil, nil];
     
-    emailIsValid = [email isEqualToString:emailConfirmation] ? YES : NO;
-    passwordIsValid = [password isEqualToString:passwordConfirmation] ? YES : NO;
+    emailIsValid = [self.emailAddress isEqualToString:self.emailAddressConfirm] ? YES : NO;
+    passwordIsValid = [self.password isEqualToString:self.passwordConfirm] ? YES : NO;
     
     if (!emailIsValid && !passwordIsValid) {
         alertView.message = bothErrorMessages;
@@ -166,11 +185,10 @@
 
 - (void)clearTextFields
 {
-    self.firstNameTextField.text = self.middleNameTextField.text =
-    self.lastNameTextField.text = self.usernameTextField.text =
-    self.passwordTextField.text = self.passwordConfirmTextField.text =
-    self.emailTextField.text = self.emailConfirmTextField.text =
-    self.phoneNumberTextField.text = EMPTY_STRING;
+    self.firstNameTextField.text = self.lastNameTextField.text =
+    self.usernameTextField.text = self.passwordTextField.text =
+    self.passwordConfirmTextField.text = self.emailTextField.text =
+    self.emailConfirmTextField.text = EMPTY_STRING;
 }
 
 #pragma mark - UITextFieldDelegate Methods

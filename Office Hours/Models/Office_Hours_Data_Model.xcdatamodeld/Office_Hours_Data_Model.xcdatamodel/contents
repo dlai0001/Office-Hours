@@ -20,12 +20,11 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="middleName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="studentClass" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="questions" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="askedBy" inverseEntity="Question" syncable="YES"/>
+        <relationship name="questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="askedBy" inverseEntity="Question" syncable="YES"/>
     </entity>
     <entity name="Teacher" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -33,10 +32,10 @@
         <relationship name="office" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Office" inverseName="teacher" inverseEntity="Office" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Student" positionX="331" positionY="-87" width="128" height="178"/>
-        <element name="Teacher" positionX="-45" positionY="-90" width="128" height="88"/>
+        <element name="Office" positionX="-225" positionY="-0" width="128" height="103"/>
         <element name="Question" positionX="531" positionY="27" width="128" height="103"/>
         <element name="Session" positionX="135" positionY="-18" width="128" height="75"/>
-        <element name="Office" positionX="-225" positionY="-0" width="128" height="103"/>
+        <element name="Student" positionX="331" positionY="-87" width="128" height="163"/>
+        <element name="Teacher" positionX="-45" positionY="-90" width="128" height="88"/>
     </elements>
 </model>

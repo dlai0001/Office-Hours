@@ -12,6 +12,10 @@
 #define H_PASSWORD_TEXT_FIELD_TAG 2
 
 @interface LoginViewController () <UITextFieldDelegate>
+
+@property (strong, nonatomic) NSString *username;
+@property (strong, nonatomic) NSString *password;
+
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @end
@@ -36,6 +40,10 @@
 {
     if ([self validateLoginCredentials]) {
         // Shoot off HTML request
+        
+        [OfficeHoursAPIClient.sharedOfficeAPIClient loginStudentWithUsername:self.username
+                                                                 andPassword:self.password];
+        
         [self performSegueWithIdentifier:@"goToQueue"
                                   sender:self];
     }
@@ -45,11 +53,11 @@
 
 - (BOOL)validateLoginCredentials
 {
-    NSString *username = self.usernameTextField.text;
-    NSString *passowrd = self.passwordTextField.text;
+    self.username = self.usernameTextField.text;
+    self.password = self.passwordTextField.text;
     
-    if ([username isEqualToString:EMPTY_STRING] ||
-        [passowrd isEqualToString:EMPTY_STRING]) {
+    if ([self.username isEqualToString:EMPTY_STRING] ||
+        [self.password isEqualToString:EMPTY_STRING]) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
                                                             message:@"Invalid username/password"
                                                            delegate:nil
@@ -59,7 +67,7 @@
         [self.usernameTextField becomeFirstResponder];
     }
     
-    NSLog(@"username: %@, password: %@", username, passowrd);
+    NSLog(@"username: %@, password: %@", self.username, self.password);
     
     [self clearTextFields];
     
