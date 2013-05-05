@@ -1,4 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Office_Hours_Data_Model" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Office" syncable="YES">
+        <attribute name="building" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="roomNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="teacher" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Teacher" inverseName="office" inverseEntity="Teacher" syncable="YES"/>
+    </entity>
+    <entity name="Question" syncable="YES">
+        <attribute name="answered" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="submissionDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="askedBy" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="questions" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="Session" syncable="YES">
+        <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Student" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="middleName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="studentClass" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="questions" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="askedBy" inverseEntity="Question" syncable="YES"/>
+    </entity>
+    <entity name="Teacher" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="office" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Office" inverseName="teacher" inverseEntity="Office" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Student" positionX="331" positionY="-87" width="128" height="178"/>
+        <element name="Teacher" positionX="-45" positionY="-90" width="128" height="88"/>
+        <element name="Question" positionX="531" positionY="27" width="128" height="103"/>
+        <element name="Session" positionX="135" positionY="-18" width="128" height="75"/>
+        <element name="Office" positionX="-225" positionY="-0" width="128" height="103"/>
+    </elements>
 </model>

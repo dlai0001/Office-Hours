@@ -30,6 +30,7 @@
 		2F858EDA1735A3E6004D1028 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F858ED91735A3E6004D1028 /* MobileCoreServices.framework */; };
 		2F858EDC1735A3EC004D1028 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F858EDB1735A3EC004D1028 /* SystemConfiguration.framework */; };
 		2F858EDF1735A56B004D1028 /* Office_Hours_Data_Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F858EDD1735A56B004D1028 /* Office_Hours_Data_Model.xcdatamodeld */; };
+		2F858EE21735C3FF004D1028 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F858EE11735C3FF004D1028 /* RegistrationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,8 @@
 		2F858ED91735A3E6004D1028 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2F858EDB1735A3EC004D1028 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2F858EDE1735A56B004D1028 /* Office_Hours_Data_Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Office_Hours_Data_Model.xcdatamodel; sourceTree = "<group>"; };
+		2F858EE01735C3FF004D1028 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationViewController.h; path = Controllers/RegistrationViewController.h; sourceTree = "<group>"; };
+		2F858EE11735C3FF004D1028 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationViewController.m; path = Controllers/RegistrationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,8 @@
 			children = (
 				2F858EB81735A217004D1028 /* LoginViewController.h */,
 				2F858EB91735A217004D1028 /* LoginViewController.m */,
+				2F858EE01735C3FF004D1028 /* RegistrationViewController.h */,
+				2F858EE11735C3FF004D1028 /* RegistrationViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				2F858ED71735A3D2004D1028 /* AFXMLRequestOperation.m in Sources */,
 				2F858ED81735A3D2004D1028 /* UIImageView+AFNetworking.m in Sources */,
 				2F858EDF1735A56B004D1028 /* Office_Hours_Data_Model.xcdatamodeld in Sources */,
+				2F858EE21735C3FF004D1028 /* RegistrationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

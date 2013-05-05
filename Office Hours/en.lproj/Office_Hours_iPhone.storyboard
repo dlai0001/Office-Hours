@@ -54,7 +54,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XLD-Dh-IwV" kind="push" id="Tmc-DO-QWX"/>
+                                    <segue destination="XLD-Dh-IwV" kind="push" identifier="goToRegistration" id="Tmc-DO-QWX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -82,7 +82,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="LqY-f9-Jz3" id="Hgu-6d-HRk"/>
                         <outlet property="usernameTextField" destination="7Im-cX-kvX" id="hRV-a0-AhJ"/>
-                        <segue destination="Cpc-3V-S1Y" kind="push" id="950-5b-4cT"/>
+                        <segue destination="Cpc-3V-S1Y" kind="push" identifier="goToQueue" id="950-5b-4cT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -99,6 +99,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="You are {2nd} in line" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erL-Mh-3EU">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Eac-qn-WQE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -116,12 +119,28 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="xur-tt-nOM" kind="modal" id="SKE-mb-JAZ"/>
+                                    <segue destination="xur-tt-nOM" kind="modal" identifier="goToNotificationSelection" id="SKE-mb-JAZ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Office Hours: 12:00 - 2:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSL-gB-GRz">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="G8D-CW-xEH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Teacher Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zm-FJ-HcT">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="FoM-6L-Pwg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Class Name, Section No" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebn-yJ-VX5">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Ohf-5Y-MzT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -140,25 +159,47 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lsI-DF-LzA" kind="push" id="HBc-1h-CdB"/>
+                                    <segue destination="lsI-DF-LzA" kind="push" identifier="goToChatRoom" id="HBc-1h-CdB"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEC-bf-vSN">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="5yr-nW-Oif"/>
+                                    <constraint firstAttribute="height" constant="42" id="IyQ-Sz-SKi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Student Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-I3-3Jv">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6zW-WA-yH0" firstAttribute="top" secondItem="erL-Mh-3EU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5RV-mJ-cnu"/>
+                            <constraint firstAttribute="trailing" secondItem="qIc-I3-3Jv" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7XY-Yp-ePj"/>
                             <constraint firstItem="QwO-rq-bRn" firstAttribute="leading" secondItem="lcK-LQ-6G3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7cA-Hp-tmC"/>
+                            <constraint firstAttribute="trailing" secondItem="Ebn-yJ-VX5" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9eK-Py-8hh"/>
+                            <constraint firstItem="rEC-bf-vSN" firstAttribute="top" secondItem="lcK-LQ-6G3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="BOb-VN-FWB"/>
                             <constraint firstAttribute="trailing" secondItem="QwO-rq-bRn" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="BTj-8J-4jk"/>
-                            <constraint firstItem="QwO-rq-bRn" firstAttribute="top" secondItem="lcK-LQ-6G3" secondAttribute="top" constant="166" id="J7s-tV-5vQ"/>
+                            <constraint firstItem="rEC-bf-vSN" firstAttribute="leading" secondItem="lcK-LQ-6G3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="GCz-ZD-2PA"/>
+                            <constraint firstItem="QwO-rq-bRn" firstAttribute="top" secondItem="lcK-LQ-6G3" secondAttribute="top" constant="216" id="JgL-MV-q8Q"/>
+                            <constraint firstItem="qIc-I3-3Jv" firstAttribute="top" secondItem="lcK-LQ-6G3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Jwk-CZ-QJP"/>
+                            <constraint firstItem="Ebn-yJ-VX5" firstAttribute="top" secondItem="7zm-FJ-HcT" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="NGx-nw-HFt"/>
                             <constraint firstAttribute="trailing" secondItem="erL-Mh-3EU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Nuv-wC-kh1"/>
                             <constraint firstItem="dSL-gB-GRz" firstAttribute="leading" secondItem="lcK-LQ-6G3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QUr-yH-sPq"/>
+                            <constraint firstItem="Ebn-yJ-VX5" firstAttribute="leading" secondItem="lcK-LQ-6G3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="R4O-R8-yjE"/>
                             <constraint firstItem="erL-Mh-3EU" firstAttribute="leading" secondItem="lcK-LQ-6G3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="RKD-6d-fLa"/>
-                            <constraint firstItem="6zW-WA-yH0" firstAttribute="top" secondItem="lcK-LQ-6G3" secondAttribute="top" constant="78" id="T7w-Yi-cc0"/>
                             <constraint firstItem="6zW-WA-yH0" firstAttribute="leading" secondItem="lcK-LQ-6G3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Trx-ra-t4H"/>
+                            <constraint firstItem="erL-Mh-3EU" firstAttribute="top" secondItem="qIc-I3-3Jv" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="V44-va-v4b"/>
                             <constraint firstAttribute="trailing" secondItem="6zW-WA-yH0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="YBo-vq-0Xg"/>
                             <constraint firstAttribute="trailing" secondItem="dSL-gB-GRz" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ZSF-6S-Vfs"/>
-                            <constraint firstItem="erL-Mh-3EU" firstAttribute="top" secondItem="lcK-LQ-6G3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="rI5-pI-rKX"/>
+                            <constraint firstAttribute="trailing" secondItem="7zm-FJ-HcT" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ecZ-WH-U4K"/>
+                            <constraint firstItem="dSL-gB-GRz" firstAttribute="top" secondItem="Ebn-yJ-VX5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hh5-C2-MfA"/>
+                            <constraint firstItem="erL-Mh-3EU" firstAttribute="top" secondItem="rEC-bf-vSN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="pSv-rs-ob4"/>
                             <constraint firstAttribute="bottom" secondItem="dSL-gB-GRz" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="twf-nR-h30"/>
+                            <constraint firstItem="7zm-FJ-HcT" firstAttribute="leading" secondItem="lcK-LQ-6G3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="wgc-Rz-XfO"/>
+                            <constraint firstItem="qIc-I3-3Jv" firstAttribute="leading" secondItem="rEC-bf-vSN" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="yoc-c9-aNp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Queue" id="zg9-IZ-vKb">
@@ -168,58 +209,133 @@
             </objects>
             <point key="canvasLocation" x="-493" y="404"/>
         </scene>
-        <!--View Controller - Registration-->
+        <!--Registration View Controller - Registration-->
         <scene sceneID="Tp2-3G-vZ5">
             <objects>
-                <viewController id="XLD-Dh-IwV" sceneMemberID="viewController">
+                <viewController id="XLD-Dh-IwV" customClass="RegistrationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ujr-rd-USH">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Xc-0u-OgG">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Xc-0u-OgG">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="XLD-Dh-IwV" id="fuQ-RY-3ve"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7bn-fd-i0q">
+                            <textField opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7bn-fd-i0q">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="XLD-Dh-IwV" id="sog-sa-byD"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BhI-QX-VC2">
+                            <textField opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BhI-QX-VC2">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="XLD-Dh-IwV" id="nwj-3V-agR"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ymA-Hb-7Eo">
+                            <textField opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ymA-Hb-7Eo">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="XLD-Dh-IwV" id="F5q-zv-QAV"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X5v-4X-YFe">
+                            <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X5v-4X-YFe">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="XLD-Dh-IwV" id="FZg-EK-G6j"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Middle Name (Optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qfY-pU-Egq">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="XLD-Dh-IwV" id="MbH-6r-LjF"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mks-jI-pRN">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="XLD-Dh-IwV" id="ws4-ac-fyH"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="put-ZX-21G">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="XLD-Dh-IwV" id="mT3-SK-gTi"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kxr-10-hPb">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="XLD-Dh-IwV" id="RRJ-FX-Yfa"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="put-ZX-21G" firstAttribute="top" secondItem="X5v-4X-YFe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3Q3-qM-HjJ"/>
                             <constraint firstItem="BhI-QX-VC2" firstAttribute="leading" secondItem="Ujr-rd-USH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="7Gg-Tg-U9G"/>
+                            <constraint firstItem="X5v-4X-YFe" firstAttribute="top" secondItem="Mks-jI-pRN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7nE-gS-xHd"/>
                             <constraint firstItem="1Xc-0u-OgG" firstAttribute="leading" secondItem="Ujr-rd-USH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="A3z-zM-dy3"/>
+                            <constraint firstItem="qfY-pU-Egq" firstAttribute="top" secondItem="1Xc-0u-OgG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="BuC-hJ-uEO"/>
+                            <constraint firstItem="kxr-10-hPb" firstAttribute="top" secondItem="put-ZX-21G" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="CA1-5i-3bt"/>
+                            <constraint firstItem="qfY-pU-Egq" firstAttribute="leading" secondItem="Ujr-rd-USH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="FOF-AX-fUM"/>
+                            <constraint firstItem="kxr-10-hPb" firstAttribute="leading" secondItem="Ujr-rd-USH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="IUr-Wq-0SP"/>
+                            <constraint firstItem="Mks-jI-pRN" firstAttribute="leading" secondItem="Ujr-rd-USH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="PRW-Hd-kOP"/>
                             <constraint firstAttribute="trailing" secondItem="X5v-4X-YFe" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="QfU-Vq-uDY"/>
+                            <constraint firstItem="Mks-jI-pRN" firstAttribute="top" secondItem="qfY-pU-Egq" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="RRA-WM-LRr"/>
                             <constraint firstAttribute="trailing" secondItem="7bn-fd-i0q" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="TjI-sc-zxK"/>
+                            <constraint firstItem="7bn-fd-i0q" firstAttribute="top" secondItem="kxr-10-hPb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Tka-hK-wwx"/>
                             <constraint firstItem="ymA-Hb-7Eo" firstAttribute="top" secondItem="BhI-QX-VC2" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ZbH-21-BE1"/>
                             <constraint firstItem="BhI-QX-VC2" firstAttribute="top" secondItem="7bn-fd-i0q" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ctP-hU-PF0"/>
                             <constraint firstAttribute="trailing" secondItem="1Xc-0u-OgG" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="e2o-ee-nDZ"/>
+                            <constraint firstAttribute="trailing" secondItem="qfY-pU-Egq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="f2w-xX-gnd"/>
                             <constraint firstItem="X5v-4X-YFe" firstAttribute="leading" secondItem="Ujr-rd-USH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fqg-mR-uJm"/>
+                            <constraint firstItem="put-ZX-21G" firstAttribute="leading" secondItem="Ujr-rd-USH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gKs-0S-dAy"/>
                             <constraint firstItem="7bn-fd-i0q" firstAttribute="leading" secondItem="Ujr-rd-USH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hMi-iw-Pte"/>
                             <constraint firstItem="1Xc-0u-OgG" firstAttribute="top" secondItem="Ujr-rd-USH" secondAttribute="top" constant="20" symbolic="YES" type="default" id="kA5-rU-Msk"/>
                             <constraint firstItem="ymA-Hb-7Eo" firstAttribute="leading" secondItem="Ujr-rd-USH" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="nJH-51-DVJ"/>
                             <constraint firstAttribute="trailing" secondItem="ymA-Hb-7Eo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="p7u-Hg-gH7"/>
-                            <constraint firstItem="7bn-fd-i0q" firstAttribute="top" secondItem="X5v-4X-YFe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="u8Z-SH-QbZ"/>
-                            <constraint firstItem="X5v-4X-YFe" firstAttribute="top" secondItem="1Xc-0u-OgG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uc1-Tn-ZjY"/>
+                            <constraint firstAttribute="trailing" secondItem="Mks-jI-pRN" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="sKY-Qc-fKy"/>
+                            <constraint firstAttribute="trailing" secondItem="kxr-10-hPb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wMD-De-KR6"/>
                             <constraint firstAttribute="trailing" secondItem="BhI-QX-VC2" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="z0k-o0-R6L"/>
+                            <constraint firstAttribute="trailing" secondItem="put-ZX-21G" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="zII-yy-u3q"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Registration" id="5Cq-ko-drB">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="kFp-Qv-KVt"/>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="vbL-2W-aYN"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="kFp-Qv-KVt">
+                            <connections>
+                                <action selector="cancelRegistration:" destination="XLD-Dh-IwV" id="2Cq-RF-NXL"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="vbL-2W-aYN">
+                            <connections>
+                                <action selector="submitRegistration:" destination="XLD-Dh-IwV" id="BG5-xK-nWv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailConfirmTextField" destination="BhI-QX-VC2" id="jzn-2M-tJ3"/>
+                        <outlet property="emailTextField" destination="7bn-fd-i0q" id="blW-5P-iot"/>
+                        <outlet property="firstNameTextField" destination="1Xc-0u-OgG" id="qox-Sf-shv"/>
+                        <outlet property="lastNameTextField" destination="Mks-jI-pRN" id="1jh-gH-S8A"/>
+                        <outlet property="middleNameTextField" destination="qfY-pU-Egq" id="l38-ws-UA3"/>
+                        <outlet property="passwordConfirmTextField" destination="kxr-10-hPb" id="1y8-VN-WWd"/>
+                        <outlet property="passwordTextField" destination="put-ZX-21G" id="A5F-pW-EMy"/>
+                        <outlet property="phoneNumberTextField" destination="ymA-Hb-7Eo" id="UjL-8z-9QA"/>
+                        <outlet property="submitBarButtonItem" destination="vbL-2W-aYN" id="Pai-4e-W11"/>
+                        <outlet property="usernameTextField" destination="X5v-4X-YFe" id="oY5-we-cyS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ik4-78-J34" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -393,6 +509,23 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="RegistrationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RegistrationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelRegistration:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="submitRegistration:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="emailConfirmTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="middleNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordConfirmTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="phoneNumberTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="submitBarButtonItem" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="usernameTextField" candidateClass="UITextField"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
