@@ -32,6 +32,8 @@
 		2F858EDF1735A56B004D1028 /* Office_Hours_Data_Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F858EDD1735A56B004D1028 /* Office_Hours_Data_Model.xcdatamodeld */; };
 		2F858EE21735C3FF004D1028 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F858EE11735C3FF004D1028 /* RegistrationViewController.m */; };
 		2F858EE51735E35E004D1028 /* StudentQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F858EE41735E35E004D1028 /* StudentQueueViewController.m */; };
+		2FD4381217362722001A3BA7 /* OfficeHoursAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD4381117362722001A3BA7 /* OfficeHoursAPIClient.m */; };
+		2FD438361736E92D001A3BA7 /* NetworkingAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD438351736E92D001A3BA7 /* NetworkingAssistant.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,10 @@
 		2F858EE11735C3FF004D1028 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationViewController.m; path = Controllers/RegistrationViewController.m; sourceTree = "<group>"; };
 		2F858EE31735E35E004D1028 /* StudentQueueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StudentQueueViewController.h; path = Controllers/StudentQueueViewController.h; sourceTree = "<group>"; };
 		2F858EE41735E35E004D1028 /* StudentQueueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StudentQueueViewController.m; path = Controllers/StudentQueueViewController.m; sourceTree = "<group>"; };
+		2FD4381017362722001A3BA7 /* OfficeHoursAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OfficeHoursAPIClient.h; path = "Data Controllers/OfficeHoursAPIClient.h"; sourceTree = "<group>"; };
+		2FD4381117362722001A3BA7 /* OfficeHoursAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OfficeHoursAPIClient.m; path = "Data Controllers/OfficeHoursAPIClient.m"; sourceTree = "<group>"; };
+		2FD438341736E92D001A3BA7 /* NetworkingAssistant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkingAssistant.h; path = Utilities/NetworkingAssistant.h; sourceTree = "<group>"; };
+		2FD438351736E92D001A3BA7 /* NetworkingAssistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkingAssistant.m; path = Utilities/NetworkingAssistant.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,10 +134,12 @@
 		2F858E98173596D6004D1028 /* Office Hours */ = {
 			isa = PBXGroup;
 			children = (
+				2FD438331736E8FA001A3BA7 /* Utilities */,
 				2F858EB7173596F3004D1028 /* Models */,
 				2F858EB6173596EC004D1028 /* Controllers */,
-				2F858E99173596D6004D1028 /* Supporting Files */,
+				2FD4380F173626F3001A3BA7 /* Data Controllers */,
 				2F858EB5173596E4004D1028 /* Views */,
+				2F858E99173596D6004D1028 /* Supporting Files */,
 			);
 			path = "Office Hours";
 			sourceTree = "<group>";
@@ -216,6 +224,24 @@
 			path = "Office Hours/Third Party Frameworks/AFNetworking";
 			sourceTree = "<group>";
 		};
+		2FD4380F173626F3001A3BA7 /* Data Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2FD4381017362722001A3BA7 /* OfficeHoursAPIClient.h */,
+				2FD4381117362722001A3BA7 /* OfficeHoursAPIClient.m */,
+			);
+			name = "Data Controllers";
+			sourceTree = "<group>";
+		};
+		2FD438331736E8FA001A3BA7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2FD438341736E92D001A3BA7 /* NetworkingAssistant.h */,
+				2FD438351736E92D001A3BA7 /* NetworkingAssistant.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -296,6 +322,8 @@
 				2F858EDF1735A56B004D1028 /* Office_Hours_Data_Model.xcdatamodeld in Sources */,
 				2F858EE21735C3FF004D1028 /* RegistrationViewController.m in Sources */,
 				2F858EE51735E35E004D1028 /* StudentQueueViewController.m in Sources */,
+				2FD4381217362722001A3BA7 /* OfficeHoursAPIClient.m in Sources */,
+				2FD438361736E92D001A3BA7 /* NetworkingAssistant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +446,7 @@
 				2F858EB4173596D7004D1028 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
