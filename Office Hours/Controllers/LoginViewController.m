@@ -36,6 +36,8 @@
 {
     if ([self validateLoginCredentials]) {
         // Shoot off HTML request
+        [self performSegueWithIdentifier:@"goToQueue"
+                                  sender:self];
     }
 }
 

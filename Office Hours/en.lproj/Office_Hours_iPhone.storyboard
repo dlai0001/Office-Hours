@@ -89,11 +89,10 @@
             </objects>
             <point key="canvasLocation" x="-1005" y="404"/>
         </scene>
-        <!--View Controller - Queue-->
+        <!--Student Queue View Controller - Queue-->
         <scene sceneID="Fil-Cw-kCq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JTN-vl-2AR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="Cpc-3V-S1Y" sceneMemberID="viewController">
+                <viewController id="Cpc-3V-S1Y" customClass="StudentQueueViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lcK-LQ-6G3">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -203,9 +202,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Queue" id="zg9-IZ-vKb">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="WU9-6E-jfR"/>
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="Y4Z-67-fNN">
+                            <connections>
+                                <action selector="signOut:" destination="Cpc-3V-S1Y" id="ZdN-Sx-bgk"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="aBP-i6-6kE"/>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JTN-vl-2AR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-493" y="404"/>
         </scene>
@@ -525,6 +530,12 @@
                 <relationship kind="outlet" name="phoneNumberTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="submitBarButtonItem" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="usernameTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="StudentQueueViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StudentQueueViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="signOut:" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
     </classes>

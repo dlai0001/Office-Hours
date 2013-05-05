@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailConfirmTextField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *submitBarButtonItem;
 @end
 
@@ -106,6 +107,8 @@
         }
     }
     
+    NSLog(@"middleName: %@", middleName);
+    
     return fieldsAreValid;
 }
 
@@ -135,8 +138,6 @@
     
     if (!emailIsValid && !passwordIsValid) {
         alertView.message = bothErrorMessages;
-        NSLog(@"email: %@ emailConfirmation: %@", email, emailConfirmation);
-        NSLog(@"password: %@ passwordConfirmation: %@", password, passwordConfirmation);
         [alertView show];
     } else if (!emailIsValid) {
         alertView.message = emailErrorMessage;
@@ -155,8 +156,8 @@
     
     for (NSString *string in stringArray) {
         if ([string isEqualToString:EMPTY_STRING]) {
-            NSLog(@"Empty String: %@", string);
             retVal = YES;
+            break;
         }
     }
     
