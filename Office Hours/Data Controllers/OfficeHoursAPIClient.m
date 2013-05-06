@@ -62,8 +62,10 @@
 
 - (void)registerStudentWithUsername:(NSString *)username password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName emailAddress:(NSString *)emailAddress forStudentClass:(NSString *)studentClass
 {
-    NSDictionary *outgoingParameters = @{@"action": @"register", @"username": username, @"password": password, @"firstName": firstName,
-                                         @"lastName": lastName, @"email": emailAddress, @"studentClass": studentClass};
+    NSDictionary *outgoingParameters = @{@"action": @"register", @"username": username,
+                                         @"password": password, @"firstName": firstName,
+                                         @"lastName": lastName, @"email": emailAddress,
+                                         @"studentClass": studentClass};
     [self getPath:@"auth"
        parameters:outgoingParameters
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -103,7 +105,8 @@
 
 - (void)registerTeacherWithUsername:(NSString *)username password:(NSString *)password firstName:(NSString *)firstName lastName:(NSString *)lastName andEmailAddress:(NSString *)emailAddress
 {
-    NSDictionary *outgoingParameters = @{@"action": @"register", @"username": username, @"password": password, @"firstName": firstName,
+    NSDictionary *outgoingParameters = @{@"action": @"register", @"username": username,
+                                         @"password": password, @"firstName": firstName,
                                          @"lastName": lastName, @"email": emailAddress};
     
     [self getPath:@"teacherauth"

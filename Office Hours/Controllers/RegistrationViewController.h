@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "OfficeHoursAPIClient.h"
 
-@interface RegistrationViewController : UIViewController
+@interface RegistrationViewController : UITableViewController
 
 @end

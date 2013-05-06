@@ -20,7 +20,9 @@
 
 @interface RegistrationViewController () <UITextFieldDelegate>
 @property (strong, nonatomic) NSString *firstName;
+@property (strong, nonatomic) NSString *middleName;
 @property (strong, nonatomic) NSString *lastName;
+@property (strong, nonatomic) NSString *phoneNumber;
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *password;
 @property (strong, nonatomic) NSString *passwordConfirm;
@@ -31,12 +33,15 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *studentTeacherSegmentedControl;
 
 @property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *middleNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordConfirmTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailConfirmTextField;
+
 @property (weak, nonatomic) IBOutlet UITextField *studentClassNameTextField;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *submitBarButtonItem;
@@ -85,7 +90,7 @@
                                                                         andEmailAddress:self.emailAddress];
                 break;
         }
-            } else {
+    } else {
         NSLog(@"Unsuccessful registration");
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
                                                             message:@"Please be sure to fill in all of the appropriate fields"
@@ -107,6 +112,7 @@
     
     self.firstName = self.firstNameTextField.text;
     self.lastName = self.lastNameTextField.text;
+    self.middleName = self.middleNameTextField.text;
     self.username = self.usernameTextField.text;
     self.password = self.passwordTextField.text;
     self.passwordConfirm = self.passwordConfirmTextField.text;
