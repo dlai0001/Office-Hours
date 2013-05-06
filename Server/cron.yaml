@@ -1,0 +1,5 @@
+cron:
+# Uncomment to enable notification for the next student in line
+#- description: daily summary job
+#  url: /tasks/notification
+#  schedule: every 1 minutes synchronized
