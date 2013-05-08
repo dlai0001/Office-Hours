@@ -30,7 +30,7 @@ App.ChatsRoute = Ember.Route.extend({
         console.log("chat activated");
         console.log(this);
 
-        
+
         __chatLastTimeStamp = 0; //reset timestamp.
 
         __chatInterval = setInterval(function(){
@@ -46,6 +46,7 @@ App.ChatsRoute = Ember.Route.extend({
                   for (var i=0; i<jsonData.chatlog.length; i++) {
                       if (__chatName != jsonData.chatlog[i].sender || __chatLastTimeStamp == 0) {
                           App.Chat.createRecord({
+                              channel: jsonData.chatlog[i].channel,
                               name: jsonData.chatlog[i].sender,
                               message: jsonData.chatlog[i].message
                           })
@@ -73,10 +74,10 @@ App.ChatsController = Ember.Controller.extend({
         this.set('newMessage', '');
         console.log("message was " + message)
         var newChat = App.Chat.createRecord({
-            name: 'Me',
+            name: __chatName,
             message: message
         })
-        this.get('store').commit();
+
         console.log("channel:" + __chatChannel);
         $.post("/chat", {'action':'new', 'channel':__chatChannel, 'sender':__chatName, 'message':message},
               function(data) {
@@ -97,6 +98,7 @@ App.Store = DS.Store.extend({
 
 // Implement explicitly to use the object proxy.
 App.Chat = DS.Model.extend({
+    channel: DS.attr('string'),
     name: DS.attr('string'),
     message: DS.attr('string')
 });
@@ -105,9 +107,5 @@ App.Chat = DS.Model.extend({
 
 //Fixtures
 App.Chat.FIXTURES = [
-    {
-      id: 1,
-      name: 'Office Hours',
-      message: 'Welcome'
-    }
+
 ];
