@@ -7,16 +7,13 @@ from chat import ChatHandler
 from notifications import NotificationHandler
 
 
-
-
-
 class MainHandler(webapp2.RequestHandler):
 
     def get(self):
-        self.response.write('Hello world!')
-
-
-
+        """
+        Redirect to our web app.
+        """
+        self.redirect("/app/index.html")
 
 
 app = webapp2.WSGIApplication([

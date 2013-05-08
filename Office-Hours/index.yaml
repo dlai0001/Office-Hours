@@ -10,12 +10,3 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
-- kind: ChatModel
-  properties:
-  - name: channel
-  - name: time_stamp
-
-- kind: ChatModel
-  properties:
-  - name: chat_channel
-  - name: time_stamp
